@@ -4,7 +4,7 @@ import React from 'react';
 const Saved = () => {
     return (
         <View>
-            <text>Saved</text>
+            <Text>Saved</Text>
         </View>
     )
 }
