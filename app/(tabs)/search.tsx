@@ -6,18 +6,19 @@ import useFetch from "@/service/useFetch";
 import {fetchMovies} from "@/service/api";
 import {icons} from "@/constants/icons";
 import SearchBar from "@/components/Searchbar";
+import {useState} from "react";
 
 const Search = () => {
 
-    const router = useRouter();
+    const [searchQuery, setSearchQuery] = useState('');
 
     const {
         data: movies,
         loading,
         error,
     } = useFetch(() => fetchMovies({
-        query: ''
-    }))
+        query: searchQuery
+    }), false)
 
     return (
         <View className = "flex-1 bg-primary">
@@ -53,10 +54,10 @@ const Search = () => {
                         </Text>
                     )}
 
-                    {!loading && !error && 'SEARCH TERM'.trim() && movies?.length > 0 && (
+                    {!loading && !error && searchQuery.trim() && movies?.length > 0 && (
                         <Text className = "text-xl text-white font-bold">
                             Search Results for{' '}
-                            <Text className = "text-accent">SEARCH TERM</Text>
+                            <Text className = "text-accent">{searchQuery}</Text>
                         </Text>
                     )}
                 </>
