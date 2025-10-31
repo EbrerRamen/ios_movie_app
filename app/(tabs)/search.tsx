@@ -6,7 +6,7 @@ import useFetch from "@/service/useFetch";
 import {fetchMovies} from "@/service/api";
 import {icons} from "@/constants/icons";
 import SearchBar from "@/components/Searchbar";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const Search = () => {
 
@@ -16,9 +16,22 @@ const Search = () => {
         data: movies,
         loading,
         error,
+        refetch: loadMovies,
+        reset,
     } = useFetch(() => fetchMovies({
         query: searchQuery
     }), false)
+
+    useEffect(() => {
+        const timeoutId = setTimeout(async () => {
+            if(searchQuery.trim()) {
+                await loadMovies();
+            } else {
+                reset()
+            }
+        }, 500);
+        return () => clearTimeout(timeoutId);
+    }, [searchQuery])
 
     return (
         <View className = "flex-1 bg-primary">
@@ -41,7 +54,11 @@ const Search = () => {
                         <Image source={icons.logo} className = "w-12 h-10" />
                     </View>
                     <View className = "my-5">
-                        <SearchBar placeholder = "Search movies..." />
+                        <SearchBar
+                            placeholder = "Search movies..."
+                            value={searchQuery}
+                            onChangeText={(text: string) => setSearchQuery(text)}
+                        />
                     </View>
 
                     {loading && (
@@ -54,7 +71,9 @@ const Search = () => {
                         </Text>
                     )}
 
-                    {!loading && !error && searchQuery.trim() && movies?.length > 0 && (
+                    {
+                        !loading && !error && searchQuery.trim()
+                        && movies?.length > 0 && (
                         <Text className = "text-xl text-white font-bold">
                             Search Results for{' '}
                             <Text className = "text-accent">{searchQuery}</Text>
