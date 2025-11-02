@@ -19,7 +19,7 @@ const MovieDetails = () => {
                     <Text className={"text-white font-bold text-xl"}>{movie?.title}</Text>
                     <View className={"flex-row items-center gap-x-1 mt-2"}>
                         <Text className={"text-light-200 text-sm"}>{movie?.release_date?.split('-')[0]}</Text>
-
+                        <Text className = "text-light-200 text-sm">{movie?.runtime}m</Text>
                     </View>
                 </View>
             </ScrollView>
