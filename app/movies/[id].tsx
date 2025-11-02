@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, Image} from "react-native";
+import {View, Text, ScrollView, Image, TouchableOpacity} from "react-native";
 import React from 'react';
 import {useLocalSearchParams} from "expo-router";
 import {fetchMovieDetails} from "@/service/api";
@@ -48,6 +48,12 @@ const MovieDetails = () => {
                     <MovieInfo label={"Production Companies"} value={movie?.production_companies.map((c) => c.name).join(" - ") || "N/A"} />
                 </View>
             </ScrollView>
+
+            <TouchableOpacity className={"absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50"}>
+                <Image source={icons.arrow} className = "size-5 mr-1 mt-0.5 rotate-180" tintColor={"#fff"} />
+                <Text className={"text-white font-semibold text-base"}>Go back</Text>
+            </TouchableOpacity>
+
         </View>
     )
 }
