@@ -48,6 +48,13 @@ export default function Index() {
                 {trendingMovies && (
                     <View className={"mt-10"}>
                         <Text className={"text-lg text-white font-bold mb-3"}>Trending Movies</Text>
+                        
+                        <FlatList className={"mb-4 mt-3"}
+                                  data={trendingMovies}
+                                  renderItem={({item, index})=> (
+                            <Text className={"text-white text-sm"}>{item.title}</Text>
+                        )}
+                                  />
                     </View>
                 )}
 
