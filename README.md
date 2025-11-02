@@ -81,7 +81,7 @@ All information is dynamically fetched from the **TMDB API**.
 ---
 
 ## 📺 Demo Source
-This project was inspired by and built following this YouTube tutorial:
+This project was inspired by and built following this YouTube tutorial:  
 🎥 [Build a Movie App with React Native and TMDB API](https://youtu.be/f8Z9JyB2EIE?si=L7rAf63ULZ0H7FzQ)
 
 ---
