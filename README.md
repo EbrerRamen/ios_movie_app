@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# 🎬 Movie Explorer — iOS App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Movie Explorer is a sleek and modern iOS app built with **React Native**, **Expo**, and **Appwrite**, designed for movie lovers who want to stay up to date with the latest and trending films. The app fetches real-time movie data using the **TMDB (The Movie Database) API**, providing an intuitive experience to explore, search, and view detailed movie information.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
 
+### 🆕 Latest Movies
+- Displays the **latest released movies** by default on the home screen.
+- Automatically updates to show new releases fetched from TMDB.
+
+### 🔍 Search Movies
+- Search for any movie by title.
+- Instantly view search results with smooth UI updates.
+
+### 🔥 Trending Movies
+- See what’s **trending inside the app** — movies that are most searched by users.
+- Powered by **Appwrite** backend to track and rank popular searches.
+
+### 🎥 Movie Details
+Tap on any movie to view comprehensive details including:
+- 🖼️ **Movie Poster**
+- 🎬 **Title**
+- 📅 **Release Year**
+- ⏱️ **Duration**
+- ⭐ **Rating**
+- 📝 **Overview**
+- 🎭 **Genre**
+- 💰 **Budget & Revenue**
+- 🏢 **Production Companies**
+
+All information is dynamically fetched from the **TMDB API**.
+
+---
+
+## 🧰 Tech Stack
+
+| Technology | Description |
+|-------------|-------------|
+| **React Native** | Framework for building native apps using React. |
+| **Expo** | Toolchain for developing and deploying React Native apps easily. |
+| **Appwrite** | Backend as a Service (BaaS) for managing trending search data. |
+| **TMDB API** | Source for all movie data, posters, and metadata. |
+
+---
+
+## 🧑‍💻 Setup & Installation
+
+### Prerequisites
+- Node.js and npm/yarn installed
+- Expo CLI installed (`npm install -g expo-cli`)
+- TMDB API key
+- Appwrite project setup
+
+### Steps
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Ebrer/movie-explorer.git
+   cd movie-explorer
+   ```
+2. **Install dependencies**
    ```bash
    npm install
+   # or
+   yarn install
    ```
-
-2. Start the app
-
+3. **Add environtment variables**
+   Create a .env file in the project root:
+   ```bash
+   EXPO_PUBLIC_MOVIE_API_KEY=your_tmdb_api_key
+   EXPO_PUBLIC_APPWRITE_PROJECT_ID=your_appwrite_project_id
+   EXPO_PUBLIC_APPWRITE_DATABASE_ID=your_appwrite_database_id
+   EXPO_PUBLIC_APPWRITE_COLLECTION_ID=your_appwrite_collection_id
+   ```
+4. **Run the app**
    ```bash
    npx expo start
    ```
+   
+---
 
-In the output, you'll find options to open the app in a
+## 📺 Demo Source
+This project was inspired by and built following this YouTube tutorial:
+🎥 [Build a Movie App with React Native and TMDB API](https://youtu.be/f8Z9JyB2EIE?si=L7rAf63ULZ0H7FzQ)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🏗️ Future Improvements  
+- Add "Add to Saved" feature.  
+- Implement authentication with Appwrite.  
+- Support for TV shows and multi-language content.  
+- Profile management.  
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 💡 Credits
+- **TMDB API** for movie data  
+- **Appwrite** for backend and database management  
+- **Expo** for rapid iOS development  
+- **YouTube Tutorial by JavaScript Mastery**  
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
