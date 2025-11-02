@@ -39,6 +39,7 @@ const MovieDetails = () => {
                         <Text className={"text-white font-bold text-sm"}>{Math.round(movie?.vote_average ?? 0)}/10</Text>
                         <Text className={"text-light-200 text-sm"}>({movie?.vote_count} votes)</Text>
                     </View>
+                    <MovieInfo label={"Overview"} value={movie?.overview} />
                 </View>
             </ScrollView>
         </View>
