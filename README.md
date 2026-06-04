@@ -7,7 +7,7 @@ Movie Explorer is a sleek and modern iOS app built with **React Native**, **Expo
 ## 📸 App Demo
 
 <p align="center">
-  <img src="./assets/demo1.png" width="200"/>
+  <img src="./assets/demo1.jfif" width="200"/>
   <img src="./assets/demo2.png" width="200"/>
   <img src="./assets/demo3.png" width="200"/>
   <img src="./assets/demo4.png" width="200"/>
